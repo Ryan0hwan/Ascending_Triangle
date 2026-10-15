@@ -37,3 +37,4 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           FORCE: ${{ inputs.force && '1' || '0' }}
+
