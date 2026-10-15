@@ -11,6 +11,10 @@ on:
         description: "테스트 실행 (최근 거래일 기준, 중복 방지 없음)"
         type: boolean
         default: true
+      diagnose:
+        description: "진단할 티커 (예: BIIB, OSCR, OII). 비워두면 전체 스캔"
+        type: string
+        default: ""
 
 jobs:
   scan:
@@ -37,4 +41,5 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           FORCE: ${{ inputs.force && '1' || '0' }}
+          DIAGNOSE: ${{ inputs.diagnose }}
 
